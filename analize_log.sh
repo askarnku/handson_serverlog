@@ -19,7 +19,11 @@ get_friends_score='get_friends_score'
 fb_request_messages='fb_request_messages'
 files="files"
 
-arr=("$count_pending_messages" "$get_messages" "$get_friends_messages" "$get_friends_score" "$fb_request_messages" "$files")
+#POST vs GET requests
+get_method="method=GET"
+post_method="method=POST"
+
+arr=("$count_pending_messages" "$get_messages" "$get_friends_messages" "$get_friends_score" "$fb_request_messages" "$files" "$get_method" "$post_method")
 
 # Functions
 
@@ -31,7 +35,7 @@ count_lines() {
 # Function to count service and connect times
 count_request_times() {
     grep "$1" server.log | while read -r line; do
-        field_num=$2  # Set this dynamically as needed
+        field_num=$2
         field=$(echo "$line" | awk -v num="$field_num" '{print $num}')
         local num=$(echo "$field" | sed 's/[a-zA-Z=]*//g')
         ((sum+=num))
