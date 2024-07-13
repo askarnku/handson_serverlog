@@ -56,7 +56,8 @@ final_function() {
     #count words
     local lines=$(count_lines $1)
     echo "Total requests for $1: $lines"
-    local avg=$(($sum/$lines))
+    # local avg=$(($sum/$lines))
+    local avg=$(echo "scale=2; $sum / $line" | bc)
     echo "avg time for $1 is: $avg"
 }
 
