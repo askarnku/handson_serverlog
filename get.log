@@ -1,0 +1,6 @@
+2014-01-09T06:16:53.965430+00:00 tntk[router]: at=info method=GET path=/api/users/100005936523819/get_friends_progress host=mygame.tntk.com fwd="5.13.89.91" dyno=web.11 connect=1ms service=49ms status=200 bytes=9498
+2014-01-09T06:15:15.893505+00:00 tntk[router]: at=info method=GET path=/api/users/1686318645/get_friends_progress host=mygame.tntk.com fwd="1.125.42.139" dyno=web.3 connect=8ms service=90ms status=200 bytes=9534
+2014-01-09T06:16:53.953691+00:00 tntk[router]: at=info method=GET path=/api/users/1535961010/get_friends_progress host=mygame.tntk.com fwd="108.193.145.66" dyno=web.1 connect=1ms service=108ms status=200 bytes=9510
+2014-01-09T06:16:13.319940+00:00 tntk[router]: at=info method=GET path=/api/users/100000161521096/get_friends_progress host=mygame.tntk.com fwd="166.139.180.56" dyno=web.6 connect=8ms service=39ms status=200 bytes=9595
+2014-01-09T06:16:54.109532+00:00 tntk[router]: at=info method=GET path=/api/users/1990684199/get_friends_progress host=mygame.tntk.com fwd="94.139.219.81" dyno=web.9 connect=2ms service=193ms status=200 bytes=9554
+2014-01-09T06:16:54.144338+00:00 tntk[router]: at=info method=GET path=/api/users/1191605946/get_friends_progress host=mygame.tntk.com fwd="68.113.121.164" dyno=web.1 connect=0ms service=34ms status=200 bytes=9601
