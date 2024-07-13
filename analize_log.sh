@@ -19,7 +19,11 @@ get_friends_score='get_friends_score'
 fb_request_messages='fb_request_messages'
 files="files"
 
-arr=("$count_pending_messages" "$get_messages" "$get_friends_messages" "$get_friends_score" "$fb_request_messages" "$files")
+#POST vs GET requests
+get_method="method=GET"
+post_method="method=POST"
+
+arr=("$count_pending_messages" "$get_messages" "$get_friends_messages" "$get_friends_score" "$fb_request_messages" "$files" "$get_method" "$post_method")
 
 # Functions
 
