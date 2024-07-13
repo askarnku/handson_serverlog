@@ -8,7 +8,7 @@ if [ -f ./server.log ]; then
     echo "server.log file found. Removing it"
 fi
 
-#Download and save in new 'server.log'
+#Download and save logs in new 'server.log'
 wget https://raw.githubusercontent.com/akjolkg/tntk/4f47929e79726836a170d25f13e0279136cb29f9/tntk.log -O server.log
 
 #User Activity Pattern
@@ -64,10 +64,8 @@ print_analitics() {
     done
 }
 
-echo "======================"
-
 print_analitics
 
-
+echo "======================"
 
 
