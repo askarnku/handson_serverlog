@@ -31,7 +31,7 @@ count_lines() {
 # Function to count service and connect times
 count_request_times() {
     grep "$1" server.log | while read -r line; do
-        field_num=$2  # Set this dynamically as needed
+        field_num=$2
         field=$(echo "$line" | awk -v num="$field_num" '{print $num}')
         local num=$(echo "$field" | sed 's/[a-zA-Z=]*//g')
         ((sum+=num))
