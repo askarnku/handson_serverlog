@@ -34,23 +34,24 @@ count_lines() {
     cat server.log | grep "$1" | wc -l
 }
 
+count_request_times() {
+    grep "$1" server.log | while read -r line; do
+        field_num=$2  # Set this dynamically as needed
+        field=$(echo "$line" | awk -v num="$field_num" '{print $num}')
+        local num=$(echo "$field" | sed 's/[a-zA-Z=]*//g')
+        ((sum+=num))
+    done
+}
+
+
 
 final_function() {
 
     local sum=0
     #count service
-    grep "$1" server.log | while read -r line; do
-        field=$(echo "$line" | awk '{print $9}')
-        local num=$(echo "$field" | sed 's/[a-zA-Z=]*//g')
-        ((sum=$sum+$num))
-    done
 
-    #count connect
-    grep "$1" server.log | while read -r line; do
-        field=$(echo "$line" | awk '{print $10}')
-        local num=$(echo "$field" | sed 's/[a-zA-Z=]*//g')
-        ((sum=$sum+$num))
-    done
+    count_request_times $1 9
+    count_request_times $1 10
 
     #count words
     local lines=$(count_lines $1)
