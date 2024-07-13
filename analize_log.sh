@@ -1,7 +1,6 @@
 #!/bin/bash
 
-setopt multios
-setopt shwordsplit
+shopt -s lastpipe
 
 if [ -f ./server.log ]; then
     rm server.log
@@ -55,14 +54,14 @@ final_function() {
 
     #count words
     local lines=$(count_lines $1)
-    echo "Total requests: $lines"
+    echo "Total requests for $1: $lines"
     local avg=$(($sum/$lines))
     echo "avg time for $1 is: $avg"
 }
 
 
 print_analitics() {
-    for item in ${arr{@}}; do
+    for item in ${arr[@]}; do
         final_function $item
         echo "======================"
     done
